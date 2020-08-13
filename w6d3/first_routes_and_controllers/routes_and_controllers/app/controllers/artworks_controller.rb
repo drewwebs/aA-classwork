@@ -1,4 +1,5 @@
 class ArtworksController < ApplicationController
+    before_action :set_artwork, only: [:show, :update, :destroy]
 
     def index
         # @artworks_owned = Artwork.where(artist_id: params[:user_id]) 
@@ -18,12 +19,10 @@ class ArtworksController < ApplicationController
     end
 
     def show
-        @artwork = Artwork.find(params[:id])
         render json: @artwork
     end
 
     def update
-        @artwork = Artwork.find(params[:id])
         if @artwork.update(artwork_params)
             redirect_to artwork_url(@artwork)
         else
@@ -32,13 +31,16 @@ class ArtworksController < ApplicationController
     end
 
     def destroy
-        @artwork = Artwork.find(params[:id])
-        
         @artwork.destroy
         redirect_to artworks_url
     end
 
     private
+
+    def set_artwork
+        @artwork = Artwork.find(params[:id])
+    end
+
     def artwork_params
         params.require(:artwork).permit(:title, :image_url, :artist_id)
     end
