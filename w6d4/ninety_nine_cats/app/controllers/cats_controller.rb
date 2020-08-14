@@ -14,6 +14,17 @@ class CatsController < ApplicationController
         render :new
     end
 
+    def create
+        @cat = Cat.new(cat_params)
+        # debugger
+        if @cat.save
+            # debugger
+            redirect_to cat_url(@cat)
+        else
+            render :new
+        end
+    end
+
     private
 
     def cat_params

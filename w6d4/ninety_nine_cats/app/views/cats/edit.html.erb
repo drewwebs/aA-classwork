@@ -1,9 +1,11 @@
-<h1>Breed a new kitty!</h1>
+<h1>Edit a kitty!</h1>
+        
 
 <form action="<%= cats_url %>" method = "post">
+    <input type="hidden" name="_method" value="patch">
 
     <label for="name">Name: </label>
-    <input type="text" name="cat[name]" id="name">
+    <input type="text" name="cat[name]" id="name" value =@cat.name>
     <br>
     
     <label for="gender">Sex: </label>
@@ -30,5 +32,4 @@
 
     <br><br>
     <input type="submit" value="Submit">
-
 </form>
