@@ -1,0 +1,27 @@
+<h1>Breed a new kitty!</h1>
+
+<form action="<%= cats_url %>" method = "post">
+
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name">
+    <br>
+    
+    <label for="sex">Sex: </label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <br>
+
+    <label for="color">Color: </label>
+    <select name = "cat[color]">
+        <% COLORS.each do |col| %>
+            <%= <option value = col selected>col</option> %>
+        <% end %>
+    </select>
+
+
+    <br><br>
+    <input type="submit" value="Submit">
+
+</form>
+
+<form
