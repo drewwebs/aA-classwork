@@ -22,6 +22,10 @@ class BandsController < ApplicationController
     end
   end
 
+  def edit
+    render :edit
+  end
+
   def destroy
     @band.delete
     redirect_to bands_url

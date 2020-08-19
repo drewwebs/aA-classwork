@@ -1,0 +1,43 @@
+<% if is_edit %>
+    <% action = album_url(album) %>
+    <% button_text = "Edit this album" %>
+<% else %>
+    <% action = new_album_url %>
+    <% button_text = "Add a new album" %>
+<% end %>
+
+
+<form action="<%= action %>" method="post">
+  <%= auth_token %>
+
+    <% if is_edit %>
+        <input type="hidden" name="_method" value="patch">
+    <% end %>
+
+  <label for="title">Album Title: </label>
+  <input id="title" type="text" name="album[title]" value="<%= @album.title %>">
+  <br>
+  <br>
+
+  <label for="year">Album Year: </label>
+  <input id="year" type="text" name="album[year]" value="<%= @album.year %>">
+  <br>    
+  <br>
+
+  <label for="band">Album Artist: </label>
+    <br>
+    <% Band.all.each do |artist| %>
+    <label>
+        <input type="radio" 
+        name="album[band_id]" 
+        value="<%= artist.id %>"
+        <%= "checked" if album.band.name == artist %>>
+        <%= artist.name %>
+    </label>
+    <br>
+    <% end %>
+    <br>    
+    <br>
+
+  <input type="submit" value="<%= button_text %>">
+</form>

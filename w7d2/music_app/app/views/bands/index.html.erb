@@ -14,7 +14,7 @@
     <% @bands.each do |band| %>
       <tr>
         <td><%= band.name %></td>
-        <td><a href="<%= band_url(band) %>"> Show Band </a></td>
+        <td><a href="<%= band_albums_url(band) %>"> Show Band </a></td>
         <td><a href="<%= edit_band_url(band) %>"> Edit Band </a></td>
         <td><form action="<%= band_url(band) %>" method = "POST">
           <input type="hidden" name="_method" value="DELETE"> 

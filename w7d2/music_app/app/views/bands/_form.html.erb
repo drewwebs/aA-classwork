@@ -1,8 +1,20 @@
-<form action="<%= bands_url %>" method="post">
+<% if is_edit %>
+    <% action = edit_band_url(band) %>
+    <% button_text = "Edit this band" %>
+<% else %>
+    <% action = new_band_url %>
+    <% button_text = "Add a new band" %>
+<% end %>
+
+<form action="<%= action %>" method="post">
   <%= auth_token %>
+
+  <% if is_edit %>
+      <input type="hidden" name="_method" value="patch">
+  <% end %>
 
   <label for="name">Band Name: </label>
   <input id="name" type="text" name="band[name]" value="<%= @band.name %>">
 
-  <input type="submit" value="Add Band">
+  <input type="submit" value="<%= button_text %>">
 </form>

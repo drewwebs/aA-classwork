@@ -2,9 +2,9 @@
 
 <p><%= @album.title %></p>
 <p>Artist: <%= @album.band.name %></p>
-<a href="<%= edit_band_album_url(@album) %>">Edit this album</a>
-<form action="<%= band_album_url(@album) %>" method="post">
+<a href="<%= edit_album_url(@album) %>">Edit this album</a>
+<form action="<%= album_url(@album) %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button>Delete this album</button>
 </form>
-<a href="<%= band_album_url %>"><- Back to Index</a>
+<a href="<%= band_albums_url(@album.band) %>"><- Back to Index</a>
