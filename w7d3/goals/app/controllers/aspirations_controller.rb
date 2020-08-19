@@ -1,0 +1,2 @@
+class AspirationsController < ApplicationController
+end
