@@ -12,7 +12,7 @@
 class User < ApplicationRecord
     validates :email, :session_token, presence:true
     validates :email, :session_token, uniqueness:true
-    validates :password_digest, presence: { message: "Password can't be blank" }
+    validates :password_digest, presence: { message: "can't be blank" }
     validates :password, length: { minimum:6, allow_nil: true}
 
     before_validation :ensure_session_token

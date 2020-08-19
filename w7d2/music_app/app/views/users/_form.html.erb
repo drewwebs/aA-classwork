@@ -2,10 +2,10 @@
   <%= auth_token %>
 
   <label for="email">Email</label>
-  <input id="email" type="text" name="user[email]" value="<%= @user.email %>">
+  <input id="email" type="text" name="user[email]" value="<%= user.email %>">
 
   <label for="password">Password</label>
-  <input id="password" type="password" name="user[password]" value="<%= @user.password %>">
+  <input id="password" type="password" name="user[password]" value="<%= user.password %>">
 
-  <input type="submit" value="Login">
+  <input type="submit" value="Log in">
 </form>
