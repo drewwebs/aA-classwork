@@ -1,0 +1,52 @@
+.main-nav {
+    display:flex;
+    justify-content: space-between;
+    padding: 25px;
+    align-items: center;
+    border-bottom: 1px solid $light-gray;
+}
+
+.left-nav, .right-nav {
+    display:flex;
+    justify-content: space-between;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+    display:flex;
+    justify-content: space-between;
+}
+
+.left-nav > ul > li {
+    font-family: $sans-serif;
+    font-size: 18px;
+    padding-right: 14px;
+    padding-left: 14px;
+    // text-transform:
+}
+
+.right-nav > ul > li {
+    display: flex;
+    padding: 2px;
+}
+
+.right-nav > ul > li:last-of-type {
+
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+    background-color: $lightest-gray;
+}
+
+.left-nav span {
+
+}
+
+
+.right-nav i {
+    align-self: center;
+    padding-left: 7px;
+    padding-right: 7px;
+    transform: scale(1.5);
+}
