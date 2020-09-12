@@ -1,0 +1,28 @@
+<% if is_edit %>
+    <% action = sub_url %>
+    <% button_text = "Save Changes" %>
+<% else %>
+    <% action = subs_url %>
+    <% button_text = "Create Sub" %>
+<% end %>
+
+<form action="<%= action %>" method="post">
+    <% if is_edit %>
+        <input type="hidden" name="_method" value="patch">
+    <% end %>
+        <%= auth_token %>
+
+            <label for="title">Title</label>
+            <br>
+            <input type="text" name="sub[title]" id="title" value="<%= @sub.title %>">
+
+            <br>
+
+            <label for="description">Description</label>
+            <br>
+            <textarea name="sub[description]" id="description" cols="30" rows="10"><%= @sub.description %></textarea>
+            <br>
+            <br>
+            <button><%= button_text %></button>
+            
+</form>

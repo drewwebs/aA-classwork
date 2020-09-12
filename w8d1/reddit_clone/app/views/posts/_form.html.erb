@@ -1,0 +1,39 @@
+<% if is_edit %>
+    <% action = post_url(post.id) %>
+    <% button_text = "Save Changes" %>
+<% else %>
+    <% action = posts_url %>
+    <% button_text = "Create Post" %>
+<% end %>
+
+<form action="<%= action %>" method="post">
+    <% if is_edit %>
+        <input type="hidden" name="_method" value="patch">
+    <% end %>
+        <%= auth_token %>
+
+            <label for="title">Title</label>
+            <br>
+            <input type="text" name="post[title]" id="title" value="<%= post.title %>">
+
+            <br>
+
+            <label for="content">Content</label>
+            <br>
+            <textarea name="post[content]" id="content" cols="30" rows="10"><%= post.content %></textarea>
+            <br>
+            <p>Post to Subs:</p>
+            <br>
+            <input type="hidden" name="post[sub_ids][]" value="">
+            <% Sub.all.each do |sub| %>
+                <label>
+                  <input type="checkbox" name="post[sub_ids][]" value="<%=sub.id%>" <%= "checked" if post.sub_ids.include?(sub.id) %> >
+                  <%= sub.title %>
+                </label>
+            <% end %>
+            
+            <br>
+            <br>
+            <button><%= button_text %></button>
+            
+</form>
