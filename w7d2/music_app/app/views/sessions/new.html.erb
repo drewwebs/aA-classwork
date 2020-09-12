@@ -1,15 +1,15 @@
+<%= render 'users/form', user: @user, is_create: false %>
 
-<!--<form action="<%= session_url %>" method="post">
+<button id="back-button" class="user-buttons"><%= link_to 'Back', bands_path %></button>
+
+<!-- <form action="<%= session_url %>" method="post">
   <%= auth_token %>
 
   <label for="email">Email</label>
-  <input id="email" type="text" name="user[email]" value="">
+  <input id="email" type="text" name="user[email]" value="<%= @user.email %>" placeholder="Email">
 
   <label for="password">Password</label>
-  <input id="password" type="password" name="user[password]" value="">
+  <input id="password" type="password" name="user[password]" value="<%= @user.password %>" placeholder="Password">
 
-  <input type="submit" value="Login">
-</form>> -->
- 
- 
-<%= render 'users/form', user: @user %>
+  <input type="submit" value="Log In">
+</form> -->

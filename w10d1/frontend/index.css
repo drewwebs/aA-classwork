@@ -72,7 +72,7 @@ table {
     justify-content: space-between;
 }
 
-.clock_box h1 {
+.clock_header {
     font-weight: bold;
     font-size: 56px;
 }

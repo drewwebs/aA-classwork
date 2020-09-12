@@ -1,5 +1,15 @@
-<form action="<%= users_url %>" method="post">
+<% if is_create %>
+  <% action = users_url %>
+  <% button_text = "Create User" %>
+<% else %>
+  <% action = session_url %>
+  <% button_text = "Log In" %>
+<% end %>
+
+
+<form class="log-in-form" action="<%= action %>" method="post">
   <%= auth_token %>
+
 
   <label for="email">Email</label>
   <input id="email" type="text" name="user[email]" value="<%= user.email %>">
@@ -7,5 +17,5 @@
   <label for="password">Password</label>
   <input id="password" type="password" name="user[password]" value="<%= user.password %>">
 
-  <input type="submit" value="Log in">
+  <input class="submit" type="submit" value="<%= button_text %>">
 </form>

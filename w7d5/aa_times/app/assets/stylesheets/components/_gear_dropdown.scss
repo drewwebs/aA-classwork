@@ -1,12 +1,12 @@
 // Use the gear_dropdown.png screenshot as a style guide
-.gear-dropdown-li {
+.gear-icon-li {
     position: relative;
 }
 
 .gear-dropdown {
     position: absolute;
-    top: 70px;
-    right: 220px;
+    top: 35px;
+    right: 10px;
     border: 1px solid $light-gray;
     background:#fff;
     z-index: 1;

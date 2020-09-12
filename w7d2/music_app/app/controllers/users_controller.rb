@@ -15,7 +15,6 @@ class UsersController < ApplicationController
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
-
   end
 
   private

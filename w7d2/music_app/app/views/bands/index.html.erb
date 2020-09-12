@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bands</h1>
 
-<table id="bands">
+<table id="bands" class="band-table">
   <thead>
     <tr>
       <th>Band Name</th>
@@ -13,10 +12,10 @@
   <tbody>
     <% @bands.each do |band| %>
       <tr>
-        <td><%= band.name %></td>
-        <td><a href="<%= band_albums_url(band) %>"> Show Band </a></td>
-        <td><a href="<%= edit_band_url(band) %>"> Edit Band </a></td>
-        <td><form action="<%= band_url(band) %>" method = "POST">
+        <td class="band-name"><%= band.name %></td>
+        <td><a class="band-link" href="<%= band_albums_url(band) %>"> Show Band </a></td>
+        <td><a class="band-link" href="<%= edit_band_url(band) %>"> Edit Band </a></td>
+        <td><form class="band-link" action="<%= band_url(band) %>" method = "POST">
           <input type="hidden" name="_method" value="DELETE"> 
           <%= auth_token %>
           <input type="submit" value="Delete Band!"> </form></td>
@@ -27,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Band', new_band_path %>
+<button id="band-button" class="user-buttons"><%= link_to 'New Band', new_band_path %></button>

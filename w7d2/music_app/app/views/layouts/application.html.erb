@@ -9,27 +9,27 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <h1 class="buttons"> 
-    <p> Music App </p> 
-    <nav class="rightbar">  
+  <nav class="nav-header"> 
+    <nav-left class="nav-left"> MuDB </nav-left> 
+    <nav-right class="nav-right">  
       <% if logged_in? %>
       Welcome, <%= current_user.email %>!
       <br>
       <br>
-      <form action="<%= session_url %>" method="post">
+      <button class="user-buttons"><form action="<%= session_url %>" method="post">
         <input type="hidden" name="_method" value="delete">
         <%= auth_token %>
         <input type="submit" value="Logout">
-      </form>
+      </form></button>
 
       <% else %>
-        <a class="c" href="<%= new_session_url %>">Login</a>
+        <a class="user-buttons" href="<%= new_session_url %>">Login</a>
         <br>
-        <a class="c" href="<%= new_user_url %>">Sign Up</a>
+        <a class="user-buttons" href="<%= new_user_url %>">Sign Up</a>
       <% end %>
 
-    </nav>
-  </h1>
+    </nav-right>
+  </nav>
 
 
   <body>

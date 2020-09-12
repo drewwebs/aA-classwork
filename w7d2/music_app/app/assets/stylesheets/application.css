@@ -25,33 +25,81 @@
     border-radius: 25px;
  } */
 
-.buttons { 
+.nav-header { 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    background-color: sienna; 
-    border: 1px solid black; 
-    border-radius: 5px
+    background-color: #008CBA; 
+    border: 1px solid gray; 
+    border-radius: 5px;
+    padding: 10px;
 }
-.c { 
-    font-size: 12px; 
+
+.nav-left {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    font-weight: bold;
+    font-size: 24px;
+    margin: auto;
+    border-bottom: 1px solid black;
+}
+
+.user-buttons { 
+    /* font-size: 12px; 
     background-color: palegoldenrod; 
     border: 1px solid black; 
-    border-radius: 3px 
+    border-radius: 3px  */
+    background-color: #555555; 
+    border: 2px solid #555555;
+    color: black;
+    padding: 10px 21px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin: 2px;
 }
 
-.loginout {
-    border: 1px solid black;
-    border-radius: 3px;
-    background-color: skyblue;
-    padding: 0px 10px 10px 10px;
+.user-buttons#band-button {
+    align-self: flex-end;
 }
 
-#customers {
-    border-bottom: 1px solid black;
-    border-collapse: collapse;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    width: 100%;
+.user-buttons#back-button {
+    width: min-content;
+}
+
+.user-buttons:hover {
+  background-color: #000; 
+  color: white;
+  font-style: italic;
+}
+
+.band-table {
+    margin: auto;
+    padding: 30px;
+}
+
+.band-link {
+    background-color: transparent; 
+    /* border: 2px solid #555555; */
+    color: black;
+    padding: 2px 4px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.band-link:hover {
+    background-color: #008CBA;
+    color: white;
 }
 
 #bands td, #bands th {
@@ -66,7 +114,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: skyblue;
+    background-color: #008CBA;
     color: black;
 }
 
@@ -82,4 +130,55 @@
 #errors {
     font-weight: bold;
     color: red;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.log-in-form {
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit {
+    width: 83%;
+    background-color: #008CBA;  
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit:hover {
+  background-color: #45a049;
 }
