@@ -869,7 +869,7 @@ ActiveRecord::Base.transaction do
          'swift'
       ],
     },
-    '103' => {
+    '  => {
       'name' => 'Exeggutor',
       'attack' => 95,
       'defense' => 85,
