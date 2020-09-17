@@ -1,5 +1,8 @@
 json.set! :pokemon do 
-    json.extract! @pokemon, :id, :name, :attack, :poke_type, :moves, :image_url
+    json.extract! @pokemon, :id, :name, :attack, :poke_type, :moves, :image_url 
+    json.array!  @pokemon.items do
+        
+        
 end
 
 json.set! :items do
